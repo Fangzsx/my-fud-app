@@ -1,9 +1,10 @@
-package com.fangzsx.my_fud_app
+package com.fangzsx.my_fud_app.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
+import com.fangzsx.my_fud_app.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {

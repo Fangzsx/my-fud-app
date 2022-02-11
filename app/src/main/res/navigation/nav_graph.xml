@@ -7,17 +7,17 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.fangzsx.my_fud_app.HomeFragment"
+        android:name="com.fangzsx.my_fud_app.ui.fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/favoritesFragment"
-        android:name="com.fangzsx.my_fud_app.FavoritesFragment"
+        android:name="com.fangzsx.my_fud_app.ui.fragments.FavoritesFragment"
         android:label="fragment_favorites"
         tools:layout="@layout/fragment_favorites" />
     <fragment
         android:id="@+id/categoryFragment"
-        android:name="com.fangzsx.my_fud_app.CategoryFragment"
+        android:name="com.fangzsx.my_fud_app.ui.fragments.CategoryFragment"
         android:label="fragment_category"
         tools:layout="@layout/fragment_category" />
 </navigation>

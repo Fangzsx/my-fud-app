@@ -41,11 +41,8 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-
     //navigation component
     def nav_version = "2.4.1"
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
@@ -64,4 +61,9 @@ dependencies {
 
     //Glide
     implementation 'com.github.bumptech.glide:glide:4.13.0'
+
+    //view model
+    def lifecycle_version = "2.5.0-alpha01"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
 }

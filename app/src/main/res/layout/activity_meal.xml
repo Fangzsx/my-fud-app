@@ -64,6 +64,7 @@
                 android:paddingStart="@dimen/_10sdp"
                 android:paddingEnd="@dimen/_10sdp">
                 <TextView
+                    android:id="@+id/tvCategory"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
@@ -71,6 +72,7 @@
                     android:gravity="center"
                     app:drawableStartCompat="@drawable/ic_categories" />
                 <TextView
+                    android:id="@+id/tvLocation"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
@@ -79,6 +81,7 @@
                     app:drawableStartCompat="@drawable/ic_location" />
             </LinearLayout>
             <TextView
+                android:id="@+id/tv_preparation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
@@ -90,10 +93,20 @@
                 android:textStyle="bold"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_10sdp"/>
+            <TextView
+                android:id="@+id/tvInstruction"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_170sdp"
+                app:layout_constraintTop_toBottomOf="@id/tv_preparation"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
     <ImageView
+        android:id="@+id/ivYoutube"
         android:layout_width="@dimen/_40sdp"
         android:layout_height="@dimen/_40sdp"
         android:src="@drawable/youtube"

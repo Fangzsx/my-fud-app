@@ -9,13 +9,23 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.fangzsx.my_fud_app.databinding.FragmentHomeBinding
+import com.fangzsx.my_fud_app.models.Meal
 import com.fangzsx.my_fud_app.ui.activities.MealActivity
 import com.fangzsx.my_fud_app.viewmodels.HomeViewModel
 
 class HomeFragment : Fragment() {
     lateinit var binding : FragmentHomeBinding
     lateinit var homeFragmentVM : HomeViewModel
+    lateinit var randomMealRef : Meal
+
     val TAG = "HomeFragment"
+
+    companion object{
+        const val MEAL_ID = "com.fangzsx.my_fud_app.ui.fragments.mealID"
+        const val MEAL_NAME = "com.fangzsx.my_fud_app.ui.fragments.mealName"
+        const val MEAL_IMG_URl = "com.fangzsx.my_fud_app.ui.fragments.mealImgUrl"
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,8 +55,11 @@ class HomeFragment : Fragment() {
     }
 
     private fun openMealActivity() {
-        Intent(activity, MealActivity::class.java).also{
-            startActivity(it)
+        Intent(activity, MealActivity::class.java).also{ intent ->
+            intent.putExtra(MEAL_ID, randomMealRef.idMeal)
+            intent.putExtra(MEAL_NAME, randomMealRef.strMeal)
+            intent.putExtra(MEAL_IMG_URl, randomMealRef.strMealThumb)
+            startActivity(intent)
         }
     }
 
@@ -55,6 +68,7 @@ class HomeFragment : Fragment() {
         ) { meal ->
             meal?.let { mealResult ->
                 setImage(mealResult.strMealThumb)
+                randomMealRef = meal
             }
         }
     }

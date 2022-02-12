@@ -22,6 +22,7 @@
                 android:id="@+id/ivMealImageDetail"
                 android:layout_width="match_parent"
                 app:layout_collapseMode="parallax"
+                android:scaleType="centerCrop"
                 android:layout_height="match_parent"/>
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolBar"

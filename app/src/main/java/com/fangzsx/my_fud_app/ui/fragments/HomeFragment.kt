@@ -43,15 +43,15 @@ class HomeFragment : Fragment() {
         homeFragmentVM.observeRandomMealLiveData().observe(viewLifecycleOwner
         ) { meal ->
             meal?.let { mealResult ->
-                setImage(mealResult)
+                setImage(mealResult.strMealThumb)
             }
         }
     }
 
-    private fun setImage(mealResult: Meal) {
+    private fun setImage(strMealThumb: String) {
         Glide
             .with(this@HomeFragment)
-            .load(mealResult.strMealThumb)
+            .load(strMealThumb)
             .into(binding.ivRandomMeal)
     }
 

@@ -1,5 +1,6 @@
 package com.fangzsx.my_fud_app.ui.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.fangzsx.my_fud_app.databinding.FragmentHomeBinding
 import com.fangzsx.my_fud_app.models.Meal
+import com.fangzsx.my_fud_app.ui.activities.MealActivity
 import com.fangzsx.my_fud_app.viewmodels.HomeViewModel
 
 class HomeFragment : Fragment() {
@@ -35,6 +37,17 @@ class HomeFragment : Fragment() {
 
         homeFragmentVM.getRandomMeal()
         observeRandomMeal()
+        listenImageClick()
+
+    }
+
+    private fun listenImageClick() {
+
+        binding.ivRandomMeal.setOnClickListener {
+            Intent(activity, MealActivity::class.java).also{
+                startActivity(it)
+            }
+        }
 
 
     }

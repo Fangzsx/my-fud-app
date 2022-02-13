@@ -90,9 +90,11 @@
                 android:id="@+id/rv_popular_meals"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/_120sdp"
+                android:padding="@dimen/_8sdp"
                 app:layout_constraintTop_toBottomOf="@id/tv_popular_meals"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginTop="@dimen/_10sdp"
+                android:clipToPadding="false"
                 android:layout_marginStart="@dimen/_25sdp"/>
 
             <TextView

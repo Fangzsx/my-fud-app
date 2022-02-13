@@ -6,17 +6,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
+import com.fangzsx.my_fud_app.adapters.PopularMealAdapter
 import com.fangzsx.my_fud_app.databinding.FragmentHomeBinding
 import com.fangzsx.my_fud_app.models.Meal
+import com.fangzsx.my_fud_app.models.MealPopular
 import com.fangzsx.my_fud_app.ui.activities.MealActivity
 import com.fangzsx.my_fud_app.viewmodels.HomeViewModel
 
 class HomeFragment : Fragment() {
-    lateinit var binding : FragmentHomeBinding
-    lateinit var homeFragmentVM : HomeViewModel
-    lateinit var randomMealRef : Meal
+    private lateinit var binding : FragmentHomeBinding
+    private lateinit var homeFragmentVM : HomeViewModel
+    private lateinit var randomMealRef : Meal
+    private lateinit var popularMealAdapter : PopularMealAdapter
 
     val TAG = "HomeFragment"
 
@@ -30,6 +35,7 @@ class HomeFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         homeFragmentVM = ViewModelProvider(this)[HomeViewModel::class.java]
+        popularMealAdapter = PopularMealAdapter()
 
     }
 
@@ -51,7 +57,27 @@ class HomeFragment : Fragment() {
             openMealActivity()
         }
 
+        homeFragmentVM.getPopularItemsByCategory()
+        observePopularMealsByCategory()
+        setUpPopularMealsRecyclerView()
 
+
+    }
+
+    private fun setUpPopularMealsRecyclerView() {
+        binding.rvPopularMeals.apply {
+            layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+            adapter = popularMealAdapter
+        }
+    }
+
+    private fun observePopularMealsByCategory() {
+        homeFragmentVM.observePopularMealLiveData().observe(viewLifecycleOwner, object : Observer<List<MealPopular>>{
+            override fun onChanged(list: List<MealPopular>?) {
+                popularMealAdapter.setMeals(list as ArrayList<MealPopular>)
+            }
+
+        })
     }
 
     private fun openMealActivity() {
@@ -67,13 +93,13 @@ class HomeFragment : Fragment() {
         homeFragmentVM.observeRandomMealLiveData().observe(viewLifecycleOwner
         ) { meal ->
             meal?.let { mealResult ->
-                setImage(mealResult.strMealThumb)
+                setRandomImage(mealResult.strMealThumb)
                 randomMealRef = meal
             }
         }
     }
 
-    private fun setImage(strMealThumb: String) {
+    private fun setRandomImage(strMealThumb: String) {
         Glide
             .with(this@HomeFragment)
             .load(strMealThumb)

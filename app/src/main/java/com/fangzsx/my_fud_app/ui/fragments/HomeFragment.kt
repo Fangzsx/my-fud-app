@@ -9,8 +9,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
+import com.fangzsx.my_fud_app.adapters.CategoryAdapter
 import com.fangzsx.my_fud_app.adapters.PopularMealAdapter
 import com.fangzsx.my_fud_app.databinding.FragmentHomeBinding
 import com.fangzsx.my_fud_app.models.Category
@@ -24,6 +26,7 @@ class HomeFragment : Fragment() {
     private lateinit var homeFragmentVM : HomeViewModel
     private lateinit var randomMealRef : Meal
     private lateinit var popularMealAdapter : PopularMealAdapter
+    private lateinit var categoryAdapter : CategoryAdapter
 
     val TAG = "HomeFragment"
 
@@ -36,6 +39,7 @@ class HomeFragment : Fragment() {
         super.onCreate(savedInstanceState)
         homeFragmentVM = ViewModelProvider(this)[HomeViewModel::class.java]
         popularMealAdapter = PopularMealAdapter()
+        categoryAdapter = CategoryAdapter()
 
     }
 
@@ -61,8 +65,18 @@ class HomeFragment : Fragment() {
         setUpPopularMealsRecyclerView()
 
         getMealCategories()
-        observeMealCategories()
+        setUpCategoryRecyclerView()
 
+
+
+    }
+
+    private fun setUpCategoryRecyclerView(){
+        observeMealCategories()
+        binding.rvCategories.apply {
+            layoutManager = GridLayoutManager(activity, 3, GridLayoutManager.VERTICAL,false)
+            adapter = categoryAdapter
+        }
 
     }
 
@@ -88,9 +102,7 @@ class HomeFragment : Fragment() {
     private fun observeMealCategories(){
         homeFragmentVM.observeMealCategories().observe(viewLifecycleOwner
         ) { categories ->
-            categories.forEach {
-                Log.i("CATEGORIES", it.strCategory)
-            }
+            categoryAdapter.setCategory(categories as ArrayList<Category>)
         }
     }
 

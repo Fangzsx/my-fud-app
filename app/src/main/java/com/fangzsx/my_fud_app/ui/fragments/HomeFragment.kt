@@ -2,6 +2,7 @@ package com.fangzsx.my_fud_app.ui.fragments
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.fangzsx.my_fud_app.adapters.PopularMealAdapter
 import com.fangzsx.my_fud_app.databinding.FragmentHomeBinding
+import com.fangzsx.my_fud_app.models.Category
 import com.fangzsx.my_fud_app.models.Meal
 import com.fangzsx.my_fud_app.models.MealPopular
 import com.fangzsx.my_fud_app.ui.activities.MealActivity
@@ -58,6 +60,9 @@ class HomeFragment : Fragment() {
         homeFragmentVM.getPopularItemsByCategory()
         setUpPopularMealsRecyclerView()
 
+        getMealCategories()
+        observeMealCategories()
+
 
     }
 
@@ -72,6 +77,19 @@ class HomeFragment : Fragment() {
             Intent(activity, MealActivity::class.java).apply {
                 putExtra(MEAL_ID, meal.idMeal)
                 startActivity(this)
+            }
+        }
+    }
+
+    private fun getMealCategories(){
+        homeFragmentVM.getMealCategories()
+    }
+
+    private fun observeMealCategories(){
+        homeFragmentVM.observeMealCategories().observe(viewLifecycleOwner
+        ) { categories ->
+            categories.forEach {
+                Log.i("CATEGORIES", it.strCategory)
             }
         }
     }

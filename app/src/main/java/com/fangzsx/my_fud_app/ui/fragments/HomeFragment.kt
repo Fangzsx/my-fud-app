@@ -27,8 +27,6 @@ class HomeFragment : Fragment() {
 
     companion object{
         const val MEAL_ID = "com.fangzsx.my_fud_app.ui.fragments.mealID"
-        const val MEAL_NAME = "com.fangzsx.my_fud_app.ui.fragments.mealName"
-        const val MEAL_IMG_URl = "com.fangzsx.my_fud_app.ui.fragments.mealImgUrl"
     }
 
 
@@ -83,8 +81,6 @@ class HomeFragment : Fragment() {
     private fun openMealActivity() {
         Intent(activity, MealActivity::class.java).also{ intent ->
             intent.putExtra(MEAL_ID, randomMealRef.idMeal)
-            intent.putExtra(MEAL_NAME, randomMealRef.strMeal)
-            intent.putExtra(MEAL_IMG_URl, randomMealRef.strMealThumb)
             startActivity(intent)
         }
     }

@@ -67,6 +67,13 @@ class HomeFragment : Fragment() {
             layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
             adapter = popularMealAdapter
         }
+
+        popularMealAdapter.onItemClick = { meal->
+            Intent(activity, MealActivity::class.java).apply {
+                putExtra(MEAL_ID, meal.idMeal)
+                startActivity(this)
+            }
+        }
     }
 
     private fun observePopularMealsByCategory() {

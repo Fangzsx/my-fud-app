@@ -1,5 +1,6 @@
 package com.fangzsx.my_fud_app.api
 
+import com.fangzsx.my_fud_app.models.MealCategoryResponse
 import com.fangzsx.my_fud_app.models.MealResponse
 import com.fangzsx.my_fud_app.models.PopularMealResponse
 import retrofit2.Call
@@ -24,5 +25,8 @@ interface MealAPI {
         @Query("c")
         category : String
     ) : Call<PopularMealResponse>
+
+    @GET("categories.php")
+    fun getMealCategories() : Call<MealCategoryResponse>
 
 }

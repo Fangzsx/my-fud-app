@@ -56,13 +56,13 @@ class HomeFragment : Fragment() {
         }
 
         homeFragmentVM.getPopularItemsByCategory()
-        observePopularMealsByCategory()
         setUpPopularMealsRecyclerView()
 
 
     }
 
     private fun setUpPopularMealsRecyclerView() {
+        observePopularMealsByCategory()
         binding.rvPopularMeals.apply {
             layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
             adapter = popularMealAdapter

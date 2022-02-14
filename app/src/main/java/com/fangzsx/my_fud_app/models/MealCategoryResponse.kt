@@ -1,5 +1,5 @@
 package com.fangzsx.my_fud_app.models
 
-data class MealCategory(
+data class MealCategoryResponse(
     val categories: List<Category>
 )

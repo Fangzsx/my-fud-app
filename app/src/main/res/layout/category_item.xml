@@ -7,12 +7,11 @@
 
     <ImageView
         android:id="@+id/iv_category"
-        android:layout_width="@dimen/_80sdp"
-        android:layout_height="@dimen/_80sdp"
+        android:layout_width="@dimen/_65sdp"
+        android:layout_height="@dimen/_65sdp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@color/accent"
-        android:scaleType="centerInside"
+        android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"/>
     <TextView
         android:id="@+id/tv_category"

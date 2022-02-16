@@ -18,6 +18,7 @@ import com.fangzsx.my_fud_app.databinding.FragmentHomeBinding
 import com.fangzsx.my_fud_app.models.Category
 import com.fangzsx.my_fud_app.models.Meal
 import com.fangzsx.my_fud_app.models.MealPopular
+import com.fangzsx.my_fud_app.ui.activities.CategoryMealsActivity
 import com.fangzsx.my_fud_app.ui.activities.MealActivity
 import com.fangzsx.my_fud_app.viewmodels.HomeViewModel
 
@@ -32,6 +33,7 @@ class HomeFragment : Fragment() {
 
     companion object{
         const val MEAL_ID = "com.fangzsx.my_fud_app.ui.fragments.mealID"
+        const val CATEGORY_MEAL = "com.fangzsx.my_fud_app.ui.fragments.category"
     }
 
 
@@ -79,7 +81,10 @@ class HomeFragment : Fragment() {
         }
 
         categoryAdapter.onItemClick = { category ->
-            Log.i(TAG, "Category: ${category.strCategory} = ${category.strCategoryDescription}")
+            Intent(activity, CategoryMealsActivity::class.java).apply{
+                putExtra(CATEGORY_MEAL, category.strCategory)
+                startActivity(this)
+            }
         }
 
     }

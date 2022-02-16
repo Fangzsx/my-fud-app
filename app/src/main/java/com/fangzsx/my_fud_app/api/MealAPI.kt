@@ -33,6 +33,6 @@ interface MealAPI {
     fun getMealsByCategory(
         @Query("c")
         category : String
-    ) : Call<MealCategoryResponse>
+    ) : Call<MealResponse>
 
 }

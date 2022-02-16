@@ -18,7 +18,7 @@
         android:layout_marginTop="@dimen/_10sdp"
         android:textStyle="bold"
         android:textColor="@color/black"
-        android:text="Category : 99"/>
+        android:text="Meal Count : 0"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_category_meals"

@@ -5,7 +5,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.fangzsx.my_fud_app.models.Meal
-import com.fangzsx.my_fud_app.models.MealCategoryResponse
 import com.fangzsx.my_fud_app.models.MealResponse
 import com.fangzsx.my_fud_app.retrofit.RetrofitInstance
 import retrofit2.Call
@@ -28,8 +27,6 @@ class MealCategoryViewModel : ViewModel() {
             override fun onFailure(call: Call<MealResponse>, t: Throwable) {
                 Log.e(TAG,"An error occurred ${t.message}")
             }
-
-
         })
     }
 

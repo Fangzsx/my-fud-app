@@ -9,7 +9,8 @@ import com.fangzsx.my_fud_app.models.Meal
 
 class CategoryMealsAdapter : RecyclerView.Adapter<CategoryMealsAdapter.MealViewHolder>(){
     inner class MealViewHolder(var binding : CategorizedMealItemBinding) : RecyclerView.ViewHolder(binding.root)
-    var categorizedMeals = ArrayList<Meal>()
+    private var categorizedMeals = ArrayList<Meal>()
+    var onClickItem : ((Meal) -> Unit)? = null
 
     fun setMeals(list : ArrayList<Meal>){
         this.categorizedMeals = list
@@ -35,6 +36,10 @@ class CategoryMealsAdapter : RecyclerView.Adapter<CategoryMealsAdapter.MealViewH
                 .load(meal.strMealThumb)
                 .into(ivCategorizedMeal)
             tvCategory.text = meal.strMeal
+        }
+
+        holder.itemView.setOnClickListener {
+            onClickItem?.invoke(meal)
         }
     }
 

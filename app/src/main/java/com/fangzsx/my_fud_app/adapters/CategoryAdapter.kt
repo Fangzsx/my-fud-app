@@ -16,9 +16,7 @@ class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>
         notifyDataSetChanged()
     }
 
-    inner class CategoryViewHolder(var binding : CategoryItemBinding) : RecyclerView.ViewHolder(binding.root){
-
-    }
+    inner class CategoryViewHolder(var binding : CategoryItemBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
         return CategoryViewHolder(

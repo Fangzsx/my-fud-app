@@ -78,6 +78,10 @@ class HomeFragment : Fragment() {
             adapter = categoryAdapter
         }
 
+        categoryAdapter.onItemClick = { category ->
+            Log.i(TAG, "Category: ${category.strCategory} = ${category.strCategoryDescription}")
+        }
+
     }
 
     private fun setUpPopularMealsRecyclerView() {

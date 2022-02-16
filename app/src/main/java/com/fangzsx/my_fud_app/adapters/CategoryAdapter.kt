@@ -9,6 +9,7 @@ import com.fangzsx.my_fud_app.models.Category
 
 class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
     private var list = ArrayList<Category>()
+    var onItemClick : ((Category) -> Unit)? = null
 
     fun setCategory(list : ArrayList<Category>){
         this.list = list
@@ -37,6 +38,10 @@ class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>
                 .with(holder.itemView)
                 .load(category.strCategoryThumb)
                 .into(ivCategory)
+        }
+
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(category)
         }
     }
 

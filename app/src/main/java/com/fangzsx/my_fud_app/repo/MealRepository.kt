@@ -1,10 +1,6 @@
 package com.fangzsx.my_fud_app.repo
 
 import androidx.lifecycle.LiveData
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
 import com.fangzsx.my_fud_app.models.Meal
 
 interface MealRepository {

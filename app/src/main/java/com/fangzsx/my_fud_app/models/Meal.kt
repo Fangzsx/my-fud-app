@@ -1,8 +1,16 @@
 package com.fangzsx.my_fud_app.models
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
 
+@Entity(
+    tableName = "meals"
+)
 data class Meal(
+    @PrimaryKey(autoGenerate = true)
+    val id : Int? = null,
+
     val dateModified: Any,
     val idMeal: String,
     val strArea: String,

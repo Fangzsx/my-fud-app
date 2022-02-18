@@ -4,7 +4,6 @@ import com.fangzsx.my_fud_app.models.MealCategoryResponse
 import com.fangzsx.my_fud_app.models.MealResponse
 import com.fangzsx.my_fud_app.models.PopularMealResponse
 import retrofit2.Call
-import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 

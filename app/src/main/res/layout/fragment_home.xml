@@ -49,7 +49,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/proxima"
                 android:text="What would you like to eat?"
-                android:textColor="@color/black"
+                android:textColor="@color/g_black"
                 android:textSize="@dimen/_18ssp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@id/ll_header"
@@ -83,7 +83,7 @@
                 app:layout_constraintStart_toStartOf="@id/tv_what_would_you_like_to_eat"
                 app:layout_constraintTop_toBottomOf="@id/cv_random_meal"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:textColor="@color/black"
+                android:textColor="@color/g_black"
                 android:textStyle="bold"/>
 
             <androidx.recyclerview.widget.RecyclerView
@@ -105,7 +105,7 @@
                 android:text="Categories"
                 app:layout_constraintTop_toBottomOf="@id/rv_popular_meals"
                 android:textStyle="bold"
-                android:textColor="@color/black"
+                android:textColor="@color/g_black"
                 android:layout_marginTop="@dimen/_10sdp"
                 app:layout_constraintStart_toStartOf="@id/rv_popular_meals"/>
 

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.fangzsx.my_fud_app.R
 import com.fangzsx.my_fud_app.databinding.FragmentFavoritesBinding
@@ -34,6 +35,8 @@ class FavoritesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        favoritesVM.retrieveFavoriteList()
+
+
+
     }
 }

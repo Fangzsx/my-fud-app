@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "c803ab8c74c4e4aee8a713f240bafeb7",
+    "identityHash": "ef672f28c993dcb4c19b38fc01382e79",
     "entities": [
       {
         "tableName": "meals",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `dateModified` TEXT NOT NULL, `idMeal` TEXT NOT NULL, `strArea` TEXT NOT NULL, `strCategory` TEXT NOT NULL, `strCreativeCommonsConfirmed` TEXT NOT NULL, `strDrinkAlternate` TEXT NOT NULL, `strImageSource` TEXT NOT NULL, `strIngredient1` TEXT NOT NULL, `strIngredient10` TEXT NOT NULL, `strIngredient11` TEXT NOT NULL, `strIngredient12` TEXT NOT NULL, `strIngredient13` TEXT NOT NULL, `strIngredient14` TEXT NOT NULL, `strIngredient15` TEXT NOT NULL, `strIngredient16` TEXT NOT NULL, `strIngredient17` TEXT NOT NULL, `strIngredient18` TEXT NOT NULL, `strIngredient19` TEXT NOT NULL, `strIngredient2` TEXT NOT NULL, `strIngredient20` TEXT NOT NULL, `strIngredient3` TEXT NOT NULL, `strIngredient4` TEXT NOT NULL, `strIngredient5` TEXT NOT NULL, `strIngredient6` TEXT NOT NULL, `strIngredient7` TEXT NOT NULL, `strIngredient8` TEXT NOT NULL, `strIngredient9` TEXT NOT NULL, `strInstructions` TEXT NOT NULL, `strMeal` TEXT NOT NULL, `strMealThumb` TEXT NOT NULL, `strMeasure1` TEXT NOT NULL, `strMeasure10` TEXT NOT NULL, `strMeasure11` TEXT NOT NULL, `strMeasure12` TEXT NOT NULL, `strMeasure13` TEXT NOT NULL, `strMeasure14` TEXT NOT NULL, `strMeasure15` TEXT NOT NULL, `strMeasure16` TEXT NOT NULL, `strMeasure17` TEXT NOT NULL, `strMeasure18` TEXT NOT NULL, `strMeasure19` TEXT NOT NULL, `strMeasure2` TEXT NOT NULL, `strMeasure20` TEXT NOT NULL, `strMeasure3` TEXT NOT NULL, `strMeasure4` TEXT NOT NULL, `strMeasure5` TEXT NOT NULL, `strMeasure6` TEXT NOT NULL, `strMeasure7` TEXT NOT NULL, `strMeasure8` TEXT NOT NULL, `strMeasure9` TEXT NOT NULL, `strSource` TEXT NOT NULL, `strTags` TEXT NOT NULL, `strYoutube` TEXT NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `dateModified` TEXT, `idMeal` TEXT NOT NULL, `strArea` TEXT NOT NULL, `strCategory` TEXT NOT NULL, `strCreativeCommonsConfirmed` TEXT, `strDrinkAlternate` TEXT, `strImageSource` TEXT, `strIngredient1` TEXT NOT NULL, `strIngredient10` TEXT NOT NULL, `strIngredient11` TEXT NOT NULL, `strIngredient12` TEXT NOT NULL, `strIngredient13` TEXT NOT NULL, `strIngredient14` TEXT NOT NULL, `strIngredient15` TEXT NOT NULL, `strIngredient16` TEXT NOT NULL, `strIngredient17` TEXT NOT NULL, `strIngredient18` TEXT NOT NULL, `strIngredient19` TEXT NOT NULL, `strIngredient2` TEXT NOT NULL, `strIngredient20` TEXT NOT NULL, `strIngredient3` TEXT NOT NULL, `strIngredient4` TEXT NOT NULL, `strIngredient5` TEXT NOT NULL, `strIngredient6` TEXT NOT NULL, `strIngredient7` TEXT NOT NULL, `strIngredient8` TEXT NOT NULL, `strIngredient9` TEXT NOT NULL, `strInstructions` TEXT NOT NULL, `strMeal` TEXT NOT NULL, `strMealThumb` TEXT NOT NULL, `strMeasure1` TEXT NOT NULL, `strMeasure10` TEXT NOT NULL, `strMeasure11` TEXT NOT NULL, `strMeasure12` TEXT NOT NULL, `strMeasure13` TEXT NOT NULL, `strMeasure14` TEXT NOT NULL, `strMeasure15` TEXT NOT NULL, `strMeasure16` TEXT NOT NULL, `strMeasure17` TEXT NOT NULL, `strMeasure18` TEXT NOT NULL, `strMeasure19` TEXT NOT NULL, `strMeasure2` TEXT NOT NULL, `strMeasure20` TEXT NOT NULL, `strMeasure3` TEXT NOT NULL, `strMeasure4` TEXT NOT NULL, `strMeasure5` TEXT NOT NULL, `strMeasure6` TEXT NOT NULL, `strMeasure7` TEXT NOT NULL, `strMeasure8` TEXT NOT NULL, `strMeasure9` TEXT NOT NULL, `strSource` TEXT NOT NULL, `strTags` TEXT, `strYoutube` TEXT NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
@@ -18,7 +18,7 @@
             "fieldPath": "dateModified",
             "columnName": "dateModified",
             "affinity": "TEXT",
-            "notNull": true
+            "notNull": false
           },
           {
             "fieldPath": "idMeal",
@@ -42,19 +42,19 @@
             "fieldPath": "strCreativeCommonsConfirmed",
             "columnName": "strCreativeCommonsConfirmed",
             "affinity": "TEXT",
-            "notNull": true
+            "notNull": false
           },
           {
             "fieldPath": "strDrinkAlternate",
             "columnName": "strDrinkAlternate",
             "affinity": "TEXT",
-            "notNull": true
+            "notNull": false
           },
           {
             "fieldPath": "strImageSource",
             "columnName": "strImageSource",
             "affinity": "TEXT",
-            "notNull": true
+            "notNull": false
           },
           {
             "fieldPath": "strIngredient1",
@@ -324,7 +324,7 @@
             "fieldPath": "strTags",
             "columnName": "strTags",
             "affinity": "TEXT",
-            "notNull": true
+            "notNull": false
           },
           {
             "fieldPath": "strYoutube",
@@ -346,7 +346,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'c803ab8c74c4e4aee8a713f240bafeb7')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ef672f28c993dcb4c19b38fc01382e79')"
     ]
   }
 }

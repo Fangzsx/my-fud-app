@@ -11,13 +11,13 @@ data class Meal(
     @PrimaryKey(autoGenerate = true)
     val id : Int? = null,
 
-    val dateModified: Any,
+    val dateModified: String?,
     val idMeal: String,
     val strArea: String,
     val strCategory: String,
-    val strCreativeCommonsConfirmed: Any,
-    val strDrinkAlternate: Any,
-    val strImageSource: Any,
+    val strCreativeCommonsConfirmed: String?,
+    val strDrinkAlternate: String?,
+    val strImageSource: String?,
     val strIngredient1: String,
     val strIngredient10: String,
     val strIngredient11: String,
@@ -62,6 +62,6 @@ data class Meal(
     val strMeasure8: String,
     val strMeasure9: String,
     val strSource: String,
-    val strTags: Any,
+    val strTags: String?,
     val strYoutube: String
 )

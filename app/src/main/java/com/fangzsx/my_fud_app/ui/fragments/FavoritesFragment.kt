@@ -12,8 +12,6 @@ class FavoritesFragment : Fragment() {
 
     private lateinit var binding : FragmentFavoritesBinding
 
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

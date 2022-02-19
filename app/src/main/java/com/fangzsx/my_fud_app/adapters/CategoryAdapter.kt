@@ -31,7 +31,7 @@ class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
         val category = list[position]
         holder.binding.apply {
-            tvCategory.text = category.strCategory
+            tvMealName.text = category.strCategory
             Glide
                 .with(holder.itemView)
                 .load(category.strCategoryThumb)

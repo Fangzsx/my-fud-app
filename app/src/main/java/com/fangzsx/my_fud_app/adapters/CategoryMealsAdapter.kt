@@ -35,7 +35,7 @@ class CategoryMealsAdapter : RecyclerView.Adapter<CategoryMealsAdapter.MealViewH
                 .with(holder.itemView)
                 .load(meal.strMealThumb)
                 .into(ivCategorizedMeal)
-            tvCategory.text = meal.strMeal
+            tvMealName.text = meal.strMeal
         }
 
         holder.itemView.setOnClickListener {

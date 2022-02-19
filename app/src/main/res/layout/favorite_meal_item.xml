@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <ImageView
-            android:id="@+id/iv_categorized_meal"
+            android:id="@+id/iv_favorite_meal"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_160sdp"
             app:layout_constraintTop_toTopOf="parent"
@@ -20,16 +20,24 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
         <TextView
-            android:id="@+id/tv_meal_name"
+            android:id="@+id/tv_favorite_meal_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/iv_categorized_meal"
-            android:text="MEAL NAME"
+            app:layout_constraintTop_toBottomOf="@id/iv_favorite_meal"
+            android:text="MEAL_NAME"
             android:gravity="center"
             android:textStyle="bold"
             android:textColor="@color/black"/>
+
+        <ImageView
+            android:id="@+id/iv_favorite_delete"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            app:layout_constraintEnd_toEndOf="@id/iv_favorite_meal"
+            app:layout_constraintBottom_toBottomOf="@id/iv_favorite_meal"
+            android:src="@drawable/ic_delete"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

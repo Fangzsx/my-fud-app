@@ -49,11 +49,11 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/proxima"
                 android:text="What would you like to eat?"
-                android:textStyle="bold"
-                android:textSize="@dimen/_18ssp"
                 android:textColor="@color/black"
-                app:layout_constraintTop_toBottomOf="@id/ll_header"
-                app:layout_constraintStart_toStartOf="@id/ll_header"/>
+                android:textSize="@dimen/_18ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/ll_header"
+                app:layout_constraintTop_toBottomOf="@id/ll_header" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_random_meal"

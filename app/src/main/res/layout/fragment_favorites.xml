@@ -7,6 +7,7 @@
     tools:context=".ui.activities.MainActivity">
 
     <LinearLayout
+        android:id="@+id/ll_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
@@ -31,6 +32,16 @@
             android:scaleType="centerCrop"
             android:src="@drawable/ic_search"/>
     </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/ll_header"
+        app:layout_constraintStart_toStartOf="@id/ll_header"
+        android:text="These are your listings "
+        android:textStyle="bold"
+        android:fontFamily="@font/proxima"
+        android:textSize="@dimen/_18ssp"
+        android:textColor="@color/black"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

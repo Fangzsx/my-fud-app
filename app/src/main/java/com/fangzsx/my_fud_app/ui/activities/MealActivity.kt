@@ -5,13 +5,17 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.fangzsx.my_fud_app.databinding.ActivityMealBinding
+import com.fangzsx.my_fud_app.db.MealDatabase
 import com.fangzsx.my_fud_app.models.Meal
+import com.fangzsx.my_fud_app.repo.MealRepository
 import com.fangzsx.my_fud_app.ui.fragments.HomeFragment
 import com.fangzsx.my_fud_app.viewmodels.meal.MealViewModel
+import com.fangzsx.my_fud_app.viewmodels.meal.MealViewModelFactory
 
 class MealActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMealBinding
@@ -24,7 +28,9 @@ class MealActivity : AppCompatActivity() {
         binding = ActivityMealBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        mealActivityVM = ViewModelProvider(this)[MealViewModel::class.java]
+        val mealRepository = MealRepository(MealDatabase.getInstance(this).getMealDao())
+        val mealViewModelFactory =  MealViewModelFactory(mealRepository)
+        mealActivityVM = ViewModelProvider(this, mealViewModelFactory)[MealViewModel::class.java]
         setUI()
 
     }
@@ -58,6 +64,10 @@ class MealActivity : AppCompatActivity() {
 
             ivYoutube.setOnClickListener {
                 launchYoutube(meal.strYoutube!!)
+            }
+            btnAddToFavorites.setOnClickListener {
+                mealActivityVM.addMeal(meal)
+                Toast.makeText(this@MealActivity, "Added to favorites", Toast.LENGTH_SHORT).show()
             }
         }
     }

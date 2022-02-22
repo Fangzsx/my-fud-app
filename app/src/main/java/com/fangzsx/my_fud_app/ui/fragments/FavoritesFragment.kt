@@ -9,6 +9,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import com.fangzsx.my_fud_app.adapters.FavoritesAdapter
 import com.fangzsx.my_fud_app.databinding.FragmentFavoritesBinding
 import com.fangzsx.my_fud_app.db.MealDatabase
@@ -51,9 +52,14 @@ class FavoritesFragment : Fragment() {
             favoritesAdapter.differ.submitList(list)
         })
 
+        setUpRecyclerView()
 
+    }
 
-
-
+    private fun setUpRecyclerView(){
+        binding.rvFavorites.apply {
+            layoutManager = GridLayoutManager(activity, 2,GridLayoutManager.VERTICAL,false)
+            adapter = favoritesAdapter
+        }
     }
 }

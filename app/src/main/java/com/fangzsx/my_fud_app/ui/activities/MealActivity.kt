@@ -57,7 +57,7 @@ class MealActivity : AppCompatActivity() {
             Glide.with(this@MealActivity).load(meal.strMealThumb).into(ivMealImageDetail)
 
             ivYoutube.setOnClickListener {
-                launchYoutube(meal.strYoutube)
+                launchYoutube(meal.strYoutube!!)
             }
         }
     }

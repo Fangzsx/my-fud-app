@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
     tableName = "meals"
 )
 data class Meal(
-    val dateModified: String?,
+    val dateModified: Any,
     @PrimaryKey
     val idMeal: String,
     val strArea: String?,

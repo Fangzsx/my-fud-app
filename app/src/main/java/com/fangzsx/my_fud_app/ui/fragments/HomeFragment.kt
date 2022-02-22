@@ -135,7 +135,7 @@ class HomeFragment : Fragment() {
         homeFragmentVM.observeRandomMealLiveData().observe(viewLifecycleOwner
         ) { meal ->
             meal?.let { mealResult ->
-                setRandomImage(mealResult.strMealThumb)
+                setRandomImage(mealResult.strMealThumb!!)
                 randomMealRef = meal
             }
         }

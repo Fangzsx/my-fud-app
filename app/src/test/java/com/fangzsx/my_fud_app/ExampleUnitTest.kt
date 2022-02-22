@@ -7,7 +7,6 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.fangzsx.my_fud_app.db.FavoriteMealDB
 import com.fangzsx.my_fud_app.db.MealDao
 import com.fangzsx.my_fud_app.models.Meal
-import com.fangzsx.my_fud_app.util.TestUtil
 import org.junit.After
 import org.junit.Test
 

@@ -15,6 +15,7 @@ class CategoryMealsActivity : AppCompatActivity() {
     private lateinit var mealCategoryVM : MealCategoryViewModel
     private lateinit var categoryMealsAdapter : CategoryMealsAdapter
     private val TAG = "CategoryMealsActivity"
+    private val MEAL_ID = "MEAL_ID"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,7 +42,7 @@ class CategoryMealsActivity : AppCompatActivity() {
         }
         categoryMealsAdapter.onClickItem = { meal ->
             Intent(this, MealActivity::class.java).apply {
-                putExtra(HomeFragment.MEAL_ID,meal.idMeal)
+                putExtra(MEAL_ID,meal.idMeal)
                 startActivity(this)
             }
         }

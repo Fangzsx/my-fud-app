@@ -38,7 +38,7 @@ class MealActivity : AppCompatActivity() {
     private fun setUI(){
         //get id
         intent?.let {
-            mealID = intent.getStringExtra(HomeFragment.MEAL_ID)!!
+            mealID = intent.getStringExtra("MEAL_ID")!!
         }
 
         onLoadingState()

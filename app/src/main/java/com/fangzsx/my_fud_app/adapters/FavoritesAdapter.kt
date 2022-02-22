@@ -10,6 +10,7 @@ import com.fangzsx.my_fud_app.databinding.FavoriteMealItemBinding
 import com.fangzsx.my_fud_app.models.Meal
 
 class FavoritesAdapter: RecyclerView.Adapter<FavoritesAdapter.MealViewHolder>() {
+    var onItemClick : ((Meal) -> Unit)? = null
 
     inner class MealViewHolder(var binding : FavoriteMealItemBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -46,7 +47,10 @@ class FavoritesAdapter: RecyclerView.Adapter<FavoritesAdapter.MealViewHolder>() 
                 .load(meal.strMealThumb)
                 .into(ivFavoriteMeal)
             tvFavoriteMealName.text = meal.strMeal
+        }
 
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(meal)
         }
     }
 

@@ -28,11 +28,11 @@ class HomeFragment : Fragment() {
     private lateinit var randomMealRef : Meal
     private lateinit var popularMealAdapter : PopularMealAdapter
     private lateinit var categoryAdapter : CategoryAdapter
+    private val MEAL_ID = "MEAL_ID"
 
     val TAG = "HomeFragment"
 
     companion object{
-        const val MEAL_ID = "com.fangzsx.my_fud_app.ui.fragments.mealID"
         const val CATEGORY_MEAL = "com.fangzsx.my_fud_app.ui.fragments.category"
     }
 
@@ -98,7 +98,7 @@ class HomeFragment : Fragment() {
 
         popularMealAdapter.onItemClick = { meal->
             Intent(activity, MealActivity::class.java).apply {
-                putExtra(MEAL_ID, meal.idMeal)
+                putExtra("MEAL_ID", meal.idMeal)
                 startActivity(this)
             }
         }

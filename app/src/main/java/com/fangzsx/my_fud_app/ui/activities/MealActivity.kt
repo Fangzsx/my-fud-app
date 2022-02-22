@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide
 import com.fangzsx.my_fud_app.databinding.ActivityMealBinding
 import com.fangzsx.my_fud_app.models.Meal
 import com.fangzsx.my_fud_app.ui.fragments.HomeFragment
-import com.fangzsx.my_fud_app.viewmodels.MealViewModel
+import com.fangzsx.my_fud_app.viewmodels.meal.MealViewModel
 
 class MealActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMealBinding

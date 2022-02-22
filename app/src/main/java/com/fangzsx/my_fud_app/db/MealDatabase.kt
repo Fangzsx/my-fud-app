@@ -24,7 +24,7 @@ abstract class MealDatabase : RoomDatabase() {
         private var INSTANCE : MealDatabase? = null
 
         @Synchronized
-        fun getInstance(context : Context) : MealDatabase?{
+        fun getInstance(context : Context) : MealDatabase{
             if(INSTANCE == null) {
                 INSTANCE = Room.databaseBuilder(
                     context,
@@ -36,7 +36,7 @@ abstract class MealDatabase : RoomDatabase() {
             }
 
 
-            return INSTANCE
+            return INSTANCE as MealDatabase
         }
     }
 

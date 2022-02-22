@@ -1,4 +1,4 @@
-package com.fangzsx.my_fud_app.viewmodels
+package com.fangzsx.my_fud_app.viewmodels.meal
 
 import android.util.Log
 import androidx.lifecycle.LiveData

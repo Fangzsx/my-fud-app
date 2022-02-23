@@ -26,7 +26,7 @@ class AllMealViewHolder : ViewModel() {
             }
 
             override fun onFailure(call: Call<MealResponse>, t: Throwable) {
-                Log.e(TAG, "An error occured ${t.message}")
+                Log.e(TAG, "An error occurred ${t.message}")
             }
 
         })

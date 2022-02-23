@@ -57,14 +57,12 @@ class AllMealFragment : Fragment() {
 
         lettersAdapter.onItemClick = { char ->
             observeFilteredMealLiveData(char)
-            binding.tvCurrentLetter.text = "Now Browsing: $char"
-
         }
     }
 
     private fun setUpFilteredMealRecyclerView(){
         //initialize
-        observeFilteredMealLiveData('a')
+        observeFilteredMealLiveData('A')
         binding.rvMealsByLetter.apply {
             layoutManager = GridLayoutManager(activity, 2, GridLayoutManager.VERTICAL, false)
             adapter = filteredMealAdapter
@@ -86,6 +84,7 @@ class AllMealFragment : Fragment() {
             mealList?.let {
                 filteredMealAdapter.setList(mealList as ArrayList<Meal>)
                 binding.tvFilterCount.text = "Meal Count: ${mealList.size}"
+                binding.tvCurrentLetter.text = "Now Browsing: $char"
             }
         }
     }

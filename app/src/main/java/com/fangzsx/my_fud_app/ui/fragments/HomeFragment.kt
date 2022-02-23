@@ -2,7 +2,6 @@ package com.fangzsx.my_fud_app.ui.fragments
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,7 +19,7 @@ import com.fangzsx.my_fud_app.models.Meal
 import com.fangzsx.my_fud_app.models.MealPopular
 import com.fangzsx.my_fud_app.ui.activities.CategoryMealsActivity
 import com.fangzsx.my_fud_app.ui.activities.MealActivity
-import com.fangzsx.my_fud_app.viewmodels.HomeViewModel
+import com.fangzsx.my_fud_app.viewmodels.home.HomeViewModel
 
 class HomeFragment : Fragment() {
     private lateinit var binding : FragmentHomeBinding

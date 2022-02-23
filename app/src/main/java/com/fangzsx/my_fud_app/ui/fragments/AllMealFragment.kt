@@ -10,7 +10,7 @@ import com.fangzsx.my_fud_app.R
 import com.fangzsx.my_fud_app.adapters.LetterAdapter
 import com.fangzsx.my_fud_app.databinding.FragmentCategoryBinding
 
-class CategoryFragment : Fragment() {
+class AllMealFragment : Fragment() {
     lateinit var binding : FragmentCategoryBinding
     lateinit var lettersAdapter : LetterAdapter
 

@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.fangzsx.my_fud_app.adapters.CategoryMealsAdapter
 import com.fangzsx.my_fud_app.databinding.ActivityCategoryMealsBinding
 import com.fangzsx.my_fud_app.ui.fragments.HomeFragment
-import com.fangzsx.my_fud_app.viewmodels.MealCategoryViewModel
+import com.fangzsx.my_fud_app.viewmodels.home.MealCategoryViewModel
 
 class CategoryMealsActivity : AppCompatActivity() {
     private lateinit var binding : ActivityCategoryMealsBinding

@@ -9,7 +9,7 @@
         android:id="@+id/favoritesFragment"
         android:icon="@drawable/ic_favorites"/>
 
-    <item android:title="Categories"
-        android:id="@+id/categoryFragment"
+    <item android:title="All Meals"
+        android:id="@+id/allMealFragment"
         android:icon="@drawable/ic_categories"/>
 </menu>

@@ -19,5 +19,5 @@
         android:id="@+id/allMealFragment"
         android:name="com.fangzsx.my_fud_app.ui.fragments.AllMealFragment"
         android:label="fragment_category"
-        tools:layout="@layout/fragment_category" />
+        tools:layout="@layout/fragment_all_meals" />
 </navigation>

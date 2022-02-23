@@ -66,6 +66,14 @@
                 android:fontFamily="@font/proxima"
                 app:layout_constraintTop_toBottomOf="@id/rv_letters"
                 android:text="Now Browsing: A"/>
+            <TextView
+                android:id="@+id/tv_filter_count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Meal Count: 99"
+                app:layout_constraintTop_toBottomOf="@id/tv_current_letter"
+                android:gravity="center"
+                android:textColor="@color/g_black"/>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -76,7 +84,7 @@
                 app:cardCornerRadius="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_current_letter">
+                app:layout_constraintTop_toBottomOf="@id/tv_filter_count">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_meals_by_letter"

@@ -9,6 +9,7 @@ import com.fangzsx.my_fud_app.models.Meal
 
 class FilteredMealAdapter : RecyclerView.Adapter<FilteredMealAdapter.MealViewHolder>() {
     private var list = ArrayList<Meal>()
+    var onItemClick : ((Meal) -> Unit)? = null
 
     fun setList(list : ArrayList<Meal>){
         this.list = list
@@ -36,6 +37,9 @@ class FilteredMealAdapter : RecyclerView.Adapter<FilteredMealAdapter.MealViewHol
                 .with(holder.itemView)
                 .load(meal.strMealThumb)
                 .into(ivFilteredMealItem)
+        }
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(meal)
         }
     }
 

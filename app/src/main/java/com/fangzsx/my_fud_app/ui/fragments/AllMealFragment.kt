@@ -1,24 +1,27 @@
 package com.fangzsx.my_fud_app.ui.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import com.fangzsx.my_fud_app.R
+import com.fangzsx.my_fud_app.adapters.FilteredMealAdapter
 import com.fangzsx.my_fud_app.adapters.LetterAdapter
 import com.fangzsx.my_fud_app.databinding.FragmentCategoryBinding
+import com.fangzsx.my_fud_app.models.Meal
 import com.fangzsx.my_fud_app.viewmodels.AllMealViewHolder
 
 class AllMealFragment : Fragment() {
     lateinit var binding : FragmentCategoryBinding
     lateinit var lettersAdapter : LetterAdapter
+    lateinit var filteredMealAdapter : FilteredMealAdapter
     lateinit var allMealVM : AllMealViewHolder
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         lettersAdapter = LetterAdapter()
+        filteredMealAdapter = FilteredMealAdapter()
         allMealVM = AllMealViewHolder()
 
     }
@@ -34,7 +37,7 @@ class AllMealFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setUpLetterRecyclerView()
-
+        setUpFilteredMealRecyclerView()
 
     }
 
@@ -51,8 +54,19 @@ class AllMealFragment : Fragment() {
     }
 
     private fun setUpFilteredMealRecyclerView(){
-        allMealVM.observeFilteredMealListLiveData().observe(viewLifecycleOwner){
+        observeFilteredMealLiveData()
+        binding.rvMealsByLetter.apply {
+            layoutManager = GridLayoutManager(activity, 2, GridLayoutManager.VERTICAL, false)
+            adapter = filteredMealAdapter
+        }
 
+    }
+
+    private fun observeFilteredMealLiveData() {
+        allMealVM.getMealByFirstLetter('b')
+
+        allMealVM.observeFilteredMealListLiveData().observe(viewLifecycleOwner) { mealList ->
+            filteredMealAdapter.setList(mealList as ArrayList<Meal>)
         }
     }
 

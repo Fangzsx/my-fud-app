@@ -34,4 +34,10 @@ interface MealAPI {
         category : String
     ) : Call<MealResponse>
 
+    @GET("search.php?")
+    fun getMealByFirstLetter(
+        @Query("f")
+        letter : Char
+    ) : Call<MealResponse>
+
 }

@@ -9,14 +9,17 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.fangzsx.my_fud_app.R
 import com.fangzsx.my_fud_app.adapters.LetterAdapter
 import com.fangzsx.my_fud_app.databinding.FragmentCategoryBinding
+import com.fangzsx.my_fud_app.viewmodels.AllMealViewHolder
 
 class AllMealFragment : Fragment() {
     lateinit var binding : FragmentCategoryBinding
     lateinit var lettersAdapter : LetterAdapter
+    lateinit var allMealVM : AllMealViewHolder
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         lettersAdapter = LetterAdapter()
+        allMealVM = AllMealViewHolder()
 
     }
 
@@ -44,6 +47,12 @@ class AllMealFragment : Fragment() {
         binding.rvLetters.apply {
             layoutManager = GridLayoutManager(activity, 7, GridLayoutManager.VERTICAL,false)
             adapter = lettersAdapter
+        }
+    }
+
+    private fun setUpFilteredMealRecyclerView(){
+        allMealVM.observeFilteredMealListLiveData().observe(viewLifecycleOwner){
+
         }
     }
 

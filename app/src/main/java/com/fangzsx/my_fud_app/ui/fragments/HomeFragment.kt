@@ -115,12 +115,8 @@ class HomeFragment : Fragment() {
     }
 
     private fun observePopularMealsByCategory() {
-        homeFragmentVM.observePopularMealLiveData().observe(viewLifecycleOwner, object : Observer<List<MealPopular>>{
-            override fun onChanged(list: List<MealPopular>?) {
-                popularMealAdapter.setMeals(list as ArrayList<MealPopular>)
-            }
-
-        })
+        homeFragmentVM.observePopularMealLiveData().observe(viewLifecycleOwner
+        ) { list -> popularMealAdapter.setMeals(list as ArrayList<MealPopular>) }
     }
 
     private fun openMealActivity() {

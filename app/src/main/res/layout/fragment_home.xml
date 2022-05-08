@@ -36,11 +36,7 @@
                     android:textColor="@color/primary"
                     android:textSize="@dimen/_25ssp"
                     android:textStyle="bold"/>
-                <ImageView
-                    android:layout_width="@dimen/_30sdp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/ic_search"
-                    android:scaleType="centerCrop"/>
+
             </LinearLayout>
 
             <TextView

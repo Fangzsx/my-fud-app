@@ -120,8 +120,7 @@
         android:layout_height="wrap_content"
         android:indeterminate="true"
         app:layout_anchor="@id/clToolbar"
-        app:layout_anchorGravity="bottom"
-        android:visibility="gone"/>
+        app:layout_anchorGravity="bottom"/>
 
 
 

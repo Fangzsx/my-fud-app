@@ -43,15 +43,13 @@ class MealActivity : AppCompatActivity() {
 
         onLoadingState()
         mealActivityVM.getMealData(mealID)
-        mealActivityVM.observeMealData().observe(this, object : Observer<Meal>{
-            override fun onChanged(meal: Meal?) {
-                onSuccessState()
-                meal?.let{
-                    attachDataToView(it)
-                }
+        mealActivityVM.observeMealData().observe(this
+        ) { meal ->
+            onSuccessState()
+            meal?.let {
+                attachDataToView(it)
             }
-
-        })
+        }
     }
 
     private fun attachDataToView(meal: Meal) {
